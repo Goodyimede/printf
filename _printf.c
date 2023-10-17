@@ -1,13 +1,9 @@
 #include "main.h"
-
 /**
- * _printf - prints output
- *
+ * _printf - a funtion that prints output
  * @format: Format string
- *
  * Return: Number of bytes printed
  */
-
 int _printf(const char *format, ...)
 {
 	int sum = 0;
@@ -17,7 +13,7 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 
-	if (!format || (format[0] == '%' && !format[1]))/* checking for NULL character */
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
@@ -48,4 +44,5 @@ int _printf(const char *format, ...)
 	_putchar(BUF_FLUSH);
 	va_end(ap);
 	return (sum);
+
 }
